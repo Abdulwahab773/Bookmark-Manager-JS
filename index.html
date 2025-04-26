@@ -1,16 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookmark Manager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="data:image/jpeg;base64,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" type="image/x-icon" >
 </head>
-<body>
-    
 
+<body class="bg-gradient-to-br from-gray-900 to-gray-800 text-gray-100 min-h-screen">
+    <nav class="bg-gray-800 shadow-md fixed top-0 left-0 right-0 z-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="text-2xl font-bold text-indigo-400">📚 BookmarkNest</div>
+                <ul class="hidden md:flex space-x-6">
+                    <li><a href="#" class="text-gray-300 hover:text-indigo-400 font-medium">Dashboard</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-indigo-400 font-medium">Library</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-indigo-400 font-medium">Contact</a></li>
+                </ul>
+                <div class="md:hidden">
+                    <button class="text-gray-300">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
+    <main class="pt-24 pb-12 px-4 max-w-3xl mx-auto">
+        <div class="bg-gray-800 border border-gray-700 p-8 rounded-2xl shadow-xl mb-8">
+            <h1 class="text-3xl font-bold text-indigo-400 mb-4">Save Your Favorite Sites</h1>
+            <p class="text-gray-400 mb-6">Easily store and access your most visited links.</p>
+            <div class="space-y-4">
+                <input type="text" id="title" placeholder="Bookmark Title"
+                    class="w-full p-3 bg-gray-900 border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                <input type="url" id="bookMarkUrl" placeholder="Bookmark URL"
+                    class="w-full p-3 bg-gray-900 border border-gray-700 text-white rounded-xl focus:ring-2 focus:ring-indigo-500" />
+                <button id="addBtn" onclick="savebookmark()"
+                    class="bg-indigo-600 text-white px-6 py-2 rounded-xl hover:bg-indigo-700 transition font-semibold">Add
+                    Bookmark</button>
+            </div>
+        </div>
 
+        <div class="bg-gray-800 border border-gray-700 p-6 rounded-2xl shadow-xl">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-semibold text-indigo-400">Your Bookmarks:</h2>
+                <button id="deleteAllBtn" onclick="deleteAllBookmarks()" class="bg-transparent border border-red-500 text-red-500 hover:bg-red-500 hover:text-white text-sm px-3 py-1 rounded-full transition-all duration-300">
+                    Delete All
+                </button>
+            </div>
+        
+            <h2 id="noBookmark" class="text-3xl font-semibold text-indigo-50 text-center">No Bookmarks Added!</h2>
+            <div id="display" class="space-y-4"></div>
+        </div>
+        
+    </main>
+
+    <footer class="bg-gray-800 mt-16 shadow-inner py-6">
+        <div class="text-center text-gray-400 text-sm">&copy; 2025 BookmarkNest. Crafted with 💙 for productivity.</div>
+    </footer>
     <script src="app.js"></script>
 </body>
+
 </html>
